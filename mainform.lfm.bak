@@ -1,0 +1,150 @@
+object mainfrm: Tmainfrm
+  Left = 303
+  Height = 276
+  Top = 248
+  Width = 501
+  Caption = 'Kamus Besar Bahasa Indonesia'
+  ClientHeight = 254
+  ClientWidth = 501
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 56
+    Top = 10
+    Width = 481
+    Align = alTop
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    Caption = 'Masukan Lema'
+    ClientHeight = 41
+    ClientWidth = 479
+    TabOrder = 0
+    object edt_lema: TEdit
+      Left = 5
+      Height = 31
+      Top = 5
+      Width = 389
+      Align = alClient
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 5
+      OnKeyPress = edt_lemaKeyPress
+      TabOrder = 0
+    end
+    object btn_carilema: TButton
+      Left = 399
+      Height = 31
+      Top = 5
+      Width = 75
+      Align = alRight
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 5
+      Caption = 'Cari'
+      OnClick = btn_carilemaClick
+      TabOrder = 1
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 10
+    Height = 168
+    Top = 76
+    Width = 233
+    Align = alLeft
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    Caption = 'Memuat'
+    ClientHeight = 153
+    ClientWidth = 231
+    TabOrder = 1
+    object list_memuat: TListBox
+      Left = 5
+      Height = 143
+      Top = 5
+      Width = 221
+      Align = alClient
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 5
+      ItemHeight = 0
+      OnClick = list_memuatClick
+      ScrollWidth = 219
+      TabOrder = 0
+      TopIndex = -1
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 253
+    Height = 168
+    Top = 76
+    Width = 238
+    Align = alClient
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    Caption = 'Padanan'
+    ClientHeight = 153
+    ClientWidth = 236
+    TabOrder = 2
+    object text_lema: TMemo
+      Left = 5
+      Height = 143
+      Top = 5
+      Width = 226
+      Align = alClient
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 5
+      ReadOnly = True
+      ScrollBars = ssAutoVertical
+      TabOrder = 0
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 288
+    top = 72
+    object MenuItem1: TMenuItem
+      Caption = '&Bantuan'
+      object MenuItem2: TMenuItem
+        Caption = '&Tentang Aplikasi'
+        OnClick = MenuItem2Click
+      end
+    end
+  end
+  object sqlite3con: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    Options = []
+    left = 240
+    top = 72
+  end
+  object Query: TSQLQuery
+    FieldDefs = <>
+    Database = sqlite3con
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 200
+    top = 72
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = sqlite3con
+    Options = []
+    left = 144
+    top = 80
+  end
+end
