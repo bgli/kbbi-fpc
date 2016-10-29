@@ -2,15 +2,12 @@
 
 KBBI Offline dibangun dengan Free Pascal (Lazarus).
 
-
 # Screenshot
 
-![sskbbi]('imgs/ss-kbbi.png')
+![sskbbi](imgs/ss-kbbi.png)
 
-<video width="528" height="340" controls>
-  <source src="imgs/kbbi-fpc.mp4" type="video/mp4">
-</video>
+![gifkbbi](imgs/ss-kbbi.gif)
 
 # Informasi
 
-Surel: [admin@situali.com]('mailto: admin@situsali.com')
+Surel: [admin@situali.com](mailto: admin@situsali.com)
